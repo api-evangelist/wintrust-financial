@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,123 +9,51 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Wintrust Financial
 providerId: wintrust-financial
-publisherName: Wintrust Financial
-serviceCategory: API
+publisherName: Wintrust Financial Corporation
+serviceCategory: Banking
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Banking
   - Financial Services
   - Community
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the Wintrust Financial API surface. Provides a FOCUS-aligned
-  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+  - Contact Sales
+description: FinOps shape for Wintrust Financial is contract-driven; the holding company does not publish a public API pricing surface, so meters and FOCUS columns are minimum placeholders pending a banking agreement.
+sources:
+  - https://www.wintrust.com
+notes: No public pricing/billing pages exist. Populate meters and chargeCategories from an actual treasury / commercial-banking contract once one exists.
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Contract-Negotiated
+  billingFrequency: Per-Invoice
   billingCurrency: USD
   chargeCategories:
     - Usage
     - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
   ServiceName: Wintrust Financial
-  ServiceCategory: Developer Tools / API
+  ServiceCategory: Banking
   ProviderName: Wintrust Financial
-  PublisherName: Wintrust Financial
-  InvoiceIssuerName: Wintrust Financial
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Wintrust Financial Corporation
+  InvoiceIssuerName: Wintrust Financial Corporation
   BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: contracted_service
+    unit: varies
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Wintrust Financial API
-    baseURL: https://api.wintrust.com
-    tags:
-      - Banking
-      - Financial Services
-      - Community
-    serviceName: Wintrust Financial API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - service
+principles:
+  - name: Visibility
+    description: Consumption signal comes from Wintrust's commercial / treasury portals and contracted reporting; no public usage API exists.
+  - name: Allocation
+    description: Spend is allocated through the underlying contract (account, treasury product) rather than via API tags.
+  - name: Optimization
+    description: Optimization is commercial - account consolidation, product selection, contract renegotiation.
+  - name: Accountability
+    description: Treasury / finance is the natural owner; engineering owns only integration cost since no per-call price is published.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
