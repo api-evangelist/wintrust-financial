@@ -2,7 +2,7 @@ aid: wintrust-financial
 url: https://raw.githubusercontent.com/api-evangelist/wintrust-financial/refs/heads/main/apis.yml
 name: Wintrust Financial
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Banking
   - Financial Services
@@ -19,7 +19,7 @@ apis:
       - Banking
       - Financial Services
       - Community
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.wintrust.com
     humanURL: https://developer.wintrust.com
     properties:
