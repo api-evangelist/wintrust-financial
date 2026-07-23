@@ -1,0 +1,52 @@
+generated: '2026-07-23'
+method: derived
+source: apis.yml (Wintrust Treasury Management API Banking description)
+note: >-
+  Wintrust delivers commercial "API banking" as file-based exchange over SFTP
+  rather than a documented REST/GraphQL API, so there are no OpenAPI
+  securitySchemes to assert transport standards (oauth2/oidc/fapi) against.
+  Conformance below is DERIVED from the payment/data file formats Wintrust
+  explicitly documents supporting in its treasury management materials. No
+  first-party developer portal, OpenAPI, or published API conformance claim
+  was found at review time.
+standards:
+  - id: nacha-ach
+    name: NACHA / ACH file format
+    conforms: true
+    evidence: Wintrust documents ACH payment file exchange and CSV-to-NACHA translation for treasury clients.
+  - id: bai2
+    name: BAI2 (Bank Administration Institute cash management balance reporting)
+    conforms: true
+    evidence: Wintrust documents BAI2 as a supported account balance/activity reporting output format.
+  - id: edi-820
+    name: ANSI X12 EDI 820 (payment order / remittance advice)
+    conforms: true
+    evidence: Wintrust documents EDI 820 payment-file support and data-format translation.
+  - id: positive-pay
+    name: Positive Pay check/ACH fraud-control file exchange
+    conforms: true
+    evidence: Wintrust documents Positive Pay issue/exception file exchange for treasury clients.
+  - id: fedwire-swift-wire
+    name: Domestic and international wire transfer file exchange
+    conforms: true
+    evidence: Wintrust documents domestic and international wire payment file exchange.
+  - id: sftp
+    name: Secure File Transfer Protocol (SSH File Transfer Protocol) transport
+    conforms: true
+    evidence: Wintrust's "API banking" connects business customers directly to its secure SFTP for file exchange.
+  - id: fdx
+    name: Financial Data Exchange (FDX) first-party API
+    conforms: false
+    evidence: No first-party FDX endpoint published; consumer data access is aggregator-mediated (Plaid) only.
+  - id: cfpb-1033
+    name: CFPB Section 1033 open-banking data-access program
+    conforms: false
+    evidence: No stated first-party 1033 data-access program found at review time.
+  - id: oauth2
+    name: OAuth 2.0 API authorization
+    conforms: false
+    evidence: No documented first-party OAuth surface; aggregator (Plaid) mediates any OAuth-style consumer access.
+  - id: rfc9457-problem-details
+    name: RFC 9457 problem+json error responses
+    conforms: false
+    evidence: No REST API surface; errors are file-processing/return-code based, not HTTP problem details.

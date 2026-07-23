@@ -1,0 +1,30 @@
+# Wintrust Financial
+
+> Wintrust Financial Corporation is a Rosemont, Illinois-based financial holding company operating a network of chartered community banks across Illinois, Wisconsin, Indiana and Florida, plus specialty lending, wealth management and mortgage businesses. Wintrust does not publish a first-party public developer portal or OpenAPI specification; its programmatic surface is commercial "API banking" delivered as file exchange over SFTP, and consumer/small-business data is reachable to third parties only through open-banking aggregators (Plaid).
+
+## Programmatic surfaces
+
+- [Wintrust Treasury Management API Banking (SFTP)](https://www.wintrust.com/business-solutions/mid-market/banking/treasury-management.html): Commercial "API banking" for treasury clients — direct SFTP connection for account balance and activity reporting, payment file exchange (Positive Pay, ACH/NACHA, domestic and international wires, EDI, lockbox) and data-format translation (CSV to NACHA, EDI 820, TXT, BAI2). No public OpenAPI, sandbox or self-serve portal; access is arranged through Treasury Management onboarding.
+- [Wintrust Open Banking Data Access (Plaid, aggregator-mediated)](https://www.openbankingtracker.com/provider/wintrust-bank-na-ibusiness-banking): No direct consumer open-banking API. Third-party apps reach Wintrust / iBusinessBanking account data through open-banking aggregators; Plaid is the confirmed aggregator supporting Wintrust in the United States.
+
+## Documentation
+
+- [Treasury Management overview](https://www.wintrust.com/business-solutions/mid-market/banking/treasury-management.html)
+- [Treasury Management — Payables](https://www.wintrustbank.com/commercial/resources/treasury-management/payables.html)
+- [Treasury Management — Receivables](https://www.wintrustbank.com/commercial/resources/treasury-management/receivables.html)
+- [In the Vault: Banking Technology](https://www.wintrust.com/financial-education/2021/03/in-the-vault-with-treasury-management-focus-on-banking-technology.html)
+- [Plaid institution directory](https://plaid.com/institutions/)
+
+## Standards conformed to (file-based exchange)
+
+- NACHA / ACH payment files
+- BAI2 cash-management balance reporting
+- ANSI X12 EDI 820 payment/remittance
+- Positive Pay fraud-control file exchange
+- Domestic and international wire transfer files
+- SFTP (SSH File Transfer Protocol) transport
+
+## Notes
+
+- No first-party OpenAPI, GraphQL, MCP, AsyncAPI, SDK, CLI, or well-known discovery surface was found at review time (2026-07-23). Probes of www.wintrust.com and www.wintrustbank.com returned 404 for /openapi.json and /swagger.json and no /.well-known documents.
+- No published first-party OAuth surface, developer security.txt, bug-bounty, or trust center was discoverable; corporate WAF blocks automated probes.

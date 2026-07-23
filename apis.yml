@@ -92,6 +92,10 @@ apis:
 common:
   - type: DomainSecurity
     url: security/wintrust-financial-domain-security.yml
+  - type: Conformance
+    url: conformance/wintrust-financial-conformance.yml
+  - type: LLMsTxt
+    url: llms/wintrust-financial-llms.txt
   - type: Website
     url: https://www.wintrust.com
   - type: Documentation
