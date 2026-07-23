@@ -1,39 +1,105 @@
 aid: wintrust-financial
 url: https://raw.githubusercontent.com/api-evangelist/wintrust-financial/refs/heads/main/apis.yml
 name: Wintrust Financial
-type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+kind: company
+accessModel:
+  pricing: enterprise
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/wintrust-financial.png
 tags:
   - Banking
   - Financial Services
-  - Community
+  - Treasury Management
+  - Commercial Banking
+  - Open Banking
+  - United States
 description: >-
-  Wintrust Financial is a major US corporation and Fortune 1000 company. The Wintrust Financial API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Wintrust Financial Corporation is a Rosemont, Illinois-based financial holding
+  company operating a network of chartered community banks (Wintrust Bank, N.A.
+  and its affiliates) primarily across Illinois, Wisconsin, Indiana and Florida,
+  plus specialty lending, wealth management and mortgage businesses. Wintrust does
+  not publish a first-party public developer portal or downloadable API
+  specifications; its programmatic surface is delivered through commercial
+  treasury management. Wintrust describes "API banking" that connects businesses
+  directly to its secure file transfer protocol (SFTP) for account balance and
+  activity reporting, payment files (Positive Pay, ACH, wires, EDI, lockbox) and
+  data-format translation (NACHA, EDI 820, BAI2). Consumer and small-business
+  account data is reachable to third parties through open-banking aggregators —
+  Plaid is the confirmed aggregator supporting Wintrust / iBusinessBanking access.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-07-23'
 specificationVersion: '0.19'
 apis:
-  - aid: wintrust-financial:wintrust-financial-api
-    name: Wintrust Financial API
+  - aid: wintrust-financial:wintrust-treasury-api-banking
+    name: Wintrust Treasury Management API Banking (SFTP)
     tags:
-      - Banking
-      - Financial Services
-      - Community
+      - Treasury Management
+      - Commercial Banking
+      - Payments
+      - File Transfer
+      - United States
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.wintrust.com
-    humanURL: https://developer.wintrust.com
+    humanURL: https://www.wintrust.com/business-solutions/mid-market/banking/treasury-management.html
     properties:
-      - url: https://developer.wintrust.com/docs
-        type: Documentation
+      - type: Documentation
+        url: https://www.wintrust.com/financial-education/2021/03/in-the-vault-with-treasury-management-focus-on-banking-technology.html
+      - type: Documentation
+        url: https://www.wintrustbank.com/commercial/resources/treasury-management/payables.html
+      - type: Documentation
+        url: https://www.wintrustbank.com/commercial/resources/treasury-management/receivables.html
     description: >-
-      The Wintrust Financial API provides access to platform services and data for enterprise integration and automation.
+      Wintrust's commercial "API banking" for treasury clients. Rather than a
+      documented REST API, Wintrust connects business customers directly to its
+      secure file transfer protocol (SFTP) for account balance and activity
+      reporting, payment file exchange (Positive Pay, ACH/NACHA, domestic and
+      international wires, EDI, lockbox) and data-format translation (CSV to
+      NACHA, EDI 820, TXT, BAI2). Delivered through the i-BusinessBanking
+      treasury platform; no public OpenAPI specification, sandbox or self-serve
+      developer portal is published — access is arranged through Treasury
+      Management onboarding.
+  - aid: wintrust-financial:wintrust-open-banking-aggregator-access
+    name: Wintrust Open Banking Data Access (Plaid, aggregator-mediated)
+    tags:
+      - Open Banking
+      - Data Aggregation
+      - Financial Data
+      - Consumer Banking
+      - United States
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    humanURL: https://www.openbankingtracker.com/provider/wintrust-bank-na-ibusiness-banking
+    properties:
+      - type: Documentation
+        url: https://plaid.com/institutions/
+      - type: Documentation
+        url: https://www.openbankingtracker.com/provider/wintrust-bank-na-ibusiness-banking
+    description: >-
+      Wintrust does not expose a direct consumer open-banking API. Third-party
+      applications reach Wintrust / iBusinessBanking account balances,
+      transaction history and account-holder data through open-banking
+      aggregators; Plaid is the confirmed aggregator that supports Wintrust in
+      the United States. There is no documented FDX endpoint, no stated CFPB
+      1033 data-access program and no Akoya/MX/Finicity listing found at review
+      time — access is aggregator-only rather than first-party.
 common:
   - type: DomainSecurity
     url: security/wintrust-financial-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/wintrust-financial-corporation
   - type: Website
     url: https://www.wintrust.com
+  - type: Documentation
+    url: https://www.wintrust.com/business-solutions/mid-market/banking/treasury-management.html
+  - type: Blog
+    url: https://www.wintrust.com/financial-education.html
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/wintrust-financial-corporation
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

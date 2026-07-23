@@ -1,0 +1,69 @@
+reviewer: API Evangelist
+date: '2026-07-23'
+provider: Wintrust Financial Corporation
+domain: wintrust.com
+summary: >-
+  Wintrust Financial is a US regional financial holding company (Rosemont, IL)
+  running a network of chartered community banks plus specialty finance, wealth
+  and mortgage units. It has no first-party public developer portal and publishes
+  no downloadable API specifications. Its real programmatic surface is commercial
+  treasury "API banking" delivered over SFTP (file-based), and aggregator-mediated
+  open-banking data access via Plaid. Represented honestly as two apis[] entries;
+  no specs were fabricated or harvested because none are publicly available.
+findings:
+  developer_portal:
+    exists: false
+    probed:
+      - url: https://developer.wintrust.com
+        result: DNS does not resolve (getaddrinfo ENOTFOUND)
+      - url: https://api.wintrust.com
+        result: no documented public API endpoint found
+    note: >-
+      The previously derived developer.wintrust.com / api.wintrust.com pointers
+      were unverifiable and have been removed. No self-serve developer portal,
+      sandbox, or API key issuance is published.
+  downloadable_specs:
+    openapi: false
+    swagger: false
+    postman: false
+    note: >-
+      No public OpenAPI, Swagger, or Postman collection is published by Wintrust.
+      Nothing harvested into openapi/ — doing so would require fabrication.
+  documented_api_surface:
+    - name: Treasury Management API Banking (SFTP)
+      type: file-based / SFTP
+      status: HTML-documented only, partner/onboarding-gated
+      capabilities:
+        - account balance and activity reporting
+        - payment files (Positive Pay, ACH/NACHA, wires, EDI, lockbox)
+        - data-format translation (CSV to NACHA, EDI 820, TXT, BAI2)
+      source: https://www.wintrust.com/financial-education/2021/03/in-the-vault-with-treasury-management-focus-on-banking-technology.html
+    - name: Open Banking Data Access (aggregator)
+      type: aggregator-mediated
+      status: no first-party API
+      source: https://www.openbankingtracker.com/provider/wintrust-bank-na-ibusiness-banking
+  auth_model:
+    documented: false
+    note: >-
+      No public OAuth2/OIDC, API-key, or mTLS documentation. Treasury SFTP access
+      uses secure file transfer credentials arranged during Treasury Management
+      onboarding; aggregator access uses Plaid's own credentialing flows.
+  fdx_1033_aggregator_posture:
+    fdx_participation: not documented
+    cfpb_1033_program: not documented
+    aggregators:
+      plaid: confirmed (Open Banking Tracker lists Plaid as supporting aggregator)
+      mx: not found
+      finicity: not found
+      akoya: not found
+    note: >-
+      Access to Wintrust / iBusinessBanking account data by third parties is
+      aggregator-only via Plaid at review time. No published FDX contract or CFPB
+      1033 data-access portal was found.
+  spec_provenance: >-
+    No specifications harvested. All API entries are humanURL-only, sourced from
+    Wintrust's own treasury management pages, the 2021 "In the Vault" technology
+    article (which introduces the "API banking" language), and Open Banking
+    Tracker for the Plaid aggregator posture. HTTP probes: developer.wintrust.com
+    DNS non-resolving; treasury/financial-education and LinkedIn pages returned
+    200 and were verified.
