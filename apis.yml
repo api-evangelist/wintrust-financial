@@ -11,7 +11,7 @@ accessModel:
   label: Enterprise
   confidence: medium
   source:
-  - plans
+    - plans
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/wintrust-financial.png
@@ -36,7 +36,7 @@ description: >-
   account data is reachable to third parties through open-banking aggregators —
   Plaid is the confirmed aggregator supporting Wintrust / iBusinessBanking access.
 created: '2026-04-19'
-modified: '2026-07-23'
+modified: '2026-07-25'
 specificationVersion: '0.19'
 apis:
   - aid: wintrust-financial:wintrust-treasury-api-banking
