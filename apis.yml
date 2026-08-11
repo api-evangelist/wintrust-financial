@@ -90,6 +90,8 @@ apis:
       1033 data-access program and no Akoya/MX/Finicity listing found at review
       time — access is aggregator-only rather than first-party.
 common:
+  - type: PrivacyPolicy
+    url: https://www.wintrust.com/privacy-information.html
   - type: DomainSecurity
     url: security/wintrust-financial-domain-security.yml
   - type: Conformance
