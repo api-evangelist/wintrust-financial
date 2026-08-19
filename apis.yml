@@ -48,7 +48,7 @@ description: >-
   Plaid is the confirmed aggregator supporting Wintrust / iBusinessBanking access.
 created: '2026-04-19'
 modified: '2026-07-25'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: wintrust-financial:wintrust-treasury-api-banking
     name: Wintrust Treasury Management API Banking (SFTP)
