@@ -28,6 +28,13 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/wintrust-financial.png
 tags:
   - Banking
+  - Financial-Services
+  - Treasury Management
+  - Commercial Banking
+  - Open Banking
+  - United States
+tags_raw:
+  - Banking
   - Financial Services
   - Treasury Management
   - Commercial Banking
