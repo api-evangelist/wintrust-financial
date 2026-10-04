@@ -28,7 +28,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/wintrust-financial.png
 tags:
   - Banking
-  - Financial-Services
+  - Financial Services
   - Treasury Management
   - Commercial Banking
   - Open Banking
@@ -40,6 +40,7 @@ tags_raw:
   - Commercial Banking
   - Open Banking
   - United States
+  - Financial-Services
 description: >-
   Wintrust Financial Corporation is a Rosemont, Illinois-based financial holding
   company operating a network of chartered community banks (Wintrust Bank, N.A.
