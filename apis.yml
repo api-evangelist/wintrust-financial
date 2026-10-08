@@ -109,6 +109,12 @@ apis:
       1033 data-access program and no Akoya/MX/Finicity listing found at review
       time — access is aggregator-only rather than first-party.
 common:
+  - type: Plans
+    url: plans/wintrust-financial-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/wintrust-financial-rate-limits.yml
+  - type: FinOps
+    url: finops/wintrust-financial-finops.yml
   - type: PrivacyPolicy
     url: https://www.wintrust.com/privacy-information.html
   - type: DomainSecurity
