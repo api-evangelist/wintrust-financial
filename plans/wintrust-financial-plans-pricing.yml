@@ -1,0 +1,58 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Wintrust Financial
+providerId: wintrust-financial
+created: '2026-05-04'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+method: generated
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - Banking
+  - Financial Services
+  - Community
+  - Contact Sales
+description: Wintrust Financial does not publish a public developer portal or API pricing page. Banking integrations are arranged through commercial / treasury banking relationships at Wintrust's chartered bank subsidiaries; pricing is contract-driven, not surfaced as a self-serve API plan.
+sources:
+  - https://www.wintrust.com
+notes: No public developer portal or API pricing. API access is commercial-banking / treasury-management partner driven. Trimmed to a single Contact Sales plan.
+plans:
+  - id: wintrust-financial-contact-sales
+    name: Contact Sales
+    type: enterprise
+    description: Integration access for Wintrust Financial is arranged via commercial / treasury banking relationships with the holding company's chartered bank subsidiaries. Fees and limits are contract-defined.
+    entries:
+      - label: Contracted Access
+        name: contracted_access
+        type: flat
+        metric: varies
+        limit: -1
+        timeFrame: usage
+        geo: US
+        unit: 1
+        price: contact sales
+        userMultiplied: false
+    elements:
+      - name: Commercial / Treasury Banking Relationship
+      - name: Contract-Specific Limits
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - subscription
+  units:
+  - negotiated
+  plans:
+  - name: Contact Sales
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - per-use
